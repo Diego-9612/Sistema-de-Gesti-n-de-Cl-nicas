@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Agregar Nuevo Paciente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef; /* Color de fondo suave */
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ccc;
+            transition: transform 0.3s;
+        }
+
+        .container:hover {
+            transform: translateY(-2px); /* Efecto de elevación */
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff; /* Color de borde al enfocar */
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra al enfocar */
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Color al pasar el mouse */
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario para Agregar Nuevo Paciente a la Lista de Espera</h1>
+    <div class="container">
+        <form th:action="@{/data/new}" th:object="${patient}" method="post">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" th:field="*{name}" required placeholder="Ingrese el nombre" />
+
+            <label for="lastName">Apellido:</label>
+            <input type="text" id="lastName" th:field="*{lastName}" required placeholder="Ingrese el apellido" />
+
+            <label for="medicalSpecialty">Especialidad Médica:</label>
+            <input type="text" id="medicalSpecialty" th:field="*{medicalSpecialty}" required placeholder="Ingrese la especialidad médica" />
+
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 Sistema de Gestión de Doctores</p>
+    </footer>
+</body>
+</html>

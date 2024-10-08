@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Listado de Doctores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Color de fondo suave */
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #007bff; /* Color de fondo de la cabecera */
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1; /* Efecto al pasar el mouse */
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #28a745; /* Color del botón de agregar */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #218838; /* Color al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Doctores</h1>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Especialidad Médica</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="doctor : ${doctoresDisponibles}">
+                    <td th:text="${doctor.id}">1</td>
+                    <td th:text="${doctor.name}">Nombre</td>
+                    <td th:text="${doctor.lastName}">Apellido</td>
+                    <td th:text="${doctor.medicalSpecialty}">Especialidad</td>
+                    <td>
+                        <a href="@{/data/edit/{id}(id=${doctor.id})}">Editar</a>
+                        <a href="@{/data/delete/{id}(id=${doctor.id})}" onclick="return confirm('¿Estás seguro de que deseas eliminar este doctor?');">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="/data/newdoctor">Agregar Doctor</a>
+    </div>
+</body>
+</html>
+
