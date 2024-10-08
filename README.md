@@ -1,2 +1,19 @@
-# Sistema-de-Gesti-n-de-Cl-nicas
-El Sistema de Gestión de Clínicas es una aplicación web diseñada para facilitar la administración de un consultorio médico. Permite gestionar la información de doctores y pacientes, incluyendo la especialidad médica de cada doctor y los detalles de cada paciente. La aplicación está construida con Spring Boot y Thymeleaf
+# Sistema de Gestión de Clínicas
+
+## Funcionalidades
+
+- **Gestión de Doctores**
+  - Agregar, editar y eliminar doctores.
+  - Visualizar la lista de doctores con su nombre, apellido y especialidad médica.
+
+- **Gestión de Pacientes**
+  - Agregar, editar y eliminar pacientes.
+  - Visualizar la lista de pacientes con su nombre, apellido y detalles de consulta médica.
+
+## Tecnologías Utilizadas
+
+- **Java**: Lenguaje de programación.
+- **Spring Boot**: Framework para el desarrollo de aplicaciones Java.
+- **Thymeleaf**: Motor de plantillas para la generación de vistas HTML.
+- **MySQL**: Sistema de gestión de bases de datos.
+- **Maven**: Herramienta de gestión y construcción de proyectos.
