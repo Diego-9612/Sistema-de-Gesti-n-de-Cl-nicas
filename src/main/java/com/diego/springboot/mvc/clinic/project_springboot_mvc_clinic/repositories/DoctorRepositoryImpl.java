@@ -11,7 +11,7 @@ import com.diego.springboot.mvc.clinic.project_springboot_mvc_clinic.models.Doct
 @Repository
 public class DoctorRepositoryImpl implements DoctorRepository {
 
-    private List <Doctors> doctors = new ArrayList<>();
+    private static List <Doctors> doctors = new ArrayList<>();
     private Long contadorId = 1L;
 
     @Override
